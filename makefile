@@ -4,16 +4,20 @@ AR = ar
 all: loops recursives loopd recursived mains maindloop maindrec
 %.o: %.c
 	$(CC) -c $<
-loops: basicClassification.o advancedClassificationLoop.o 
-	$(AR) rc libclassloops.a basicClassification.o advancedClassificationLoop.o
+loops: libclassloops.a
+libclassloops.a: basicClassification.o advancedClassificationLoop.o 
+	$(AR) -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
 	ranlib libclassloops.a	
-recursives: basicClassification.o advancedClassificationRecursion.o 
+recursives: libclassrec.a
+libclassrec.a: basicClassification.o advancedClassificationRecursion.o 
 	$(AR) rc libclassrec.a basicClassification.o advancedClassificationRecursion.o
 	ranlib libclassrec.a
-loopd: basicClassification.o advancedClassificationLoop.o 
+loopd: libclassloops.so
+libclassloops.so: basicClassification.o advancedClassificationLoop.o 
 	$(CC) $(CFLAGS) -fPIC -c basicClassification.c advancedClassificationLoop.c
-	$(CC) -shared basicClassification.o advancedClassificationLoop.o -o libclassloops.so	
-recursived: basicClassification.o advancedClassificationRecursion.o 
+	$(CC) -shared basicClassification.o advancedClassificationLoop.o -o libclassloops.so
+recursived: libclassrec.so	
+libclassrec.so: basicClassification.o advancedClassificationRecursion.o 
 	$(CC) $(CFLAGS) -fPIC -c basicClassification.c advancedClassificationRecursion.c
 	$(CC) -shared basicClassification.o advancedClassificationRecursion.o -o libclassrec.so
 mains: mains.o libclassrec.a
