@@ -5,10 +5,10 @@ all: loops recursives loopd recursived mains maindloop maindrec
 %.o: %.c
 	$(CC) -c $<
 loops: basicClassification.o advancedClassificationLoop.o 
-	$(AR) rcu libclassloops.a basicClassification.o advancedClassificationLoop.o
+	$(AR) rc libclassloops.a basicClassification.o advancedClassificationLoop.o
 	ranlib libclassloops.a	
 recursives: basicClassification.o advancedClassificationRecursion.o 
-	$(AR) rcu libclassrec.a basicClassification.o advancedClassificationRecursion.o
+	$(AR) rc libclassrec.a basicClassification.o advancedClassificationRecursion.o
 	ranlib libclassrec.a
 loopd: basicClassification.o advancedClassificationLoop.o 
 	$(CC) $(CFLAGS) -fPIC -c basicClassification.c advancedClassificationLoop.c
