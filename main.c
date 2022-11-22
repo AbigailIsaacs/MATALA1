@@ -45,7 +45,7 @@ int main(){
 			}
 			between = between+1;
 		}
-	printf("\n")
+	printf("\n");
 	
 	
 	return 0;
