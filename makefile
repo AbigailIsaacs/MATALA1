@@ -6,7 +6,7 @@ all: loops recursives loopd recursived mains maindloop maindrec
 	$(CC) -c $<
 loops: libclassloops.a
 libclassloops.a: basicClassification.o advancedClassificationLoop.o 
-	$(AR) -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
+	$(AR) rcu libclassloops.a basicClassification.o advancedClassificationLoop.o
 	ranlib libclassloops.a	
 recursives: libclassrec.a
 libclassrec.a: basicClassification.o advancedClassificationRecursion.o 
