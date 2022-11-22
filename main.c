@@ -5,12 +5,11 @@
 int main(){
 	int n1 =-1;
 	int n2 =-1;
-	printf("Enter two Intiger numbers -");
 	scanf("%d %d",&n1,&n2);
 
 	int between = n1;
 	
-	printf("\nThe Armstrong numbers are:");
+	printf("The Armstrong numbers are:");
 		while(between<=n2){
 			if (isArmstrong(between) == 1){
 				printf(" %d",between);
