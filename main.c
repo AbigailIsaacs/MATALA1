@@ -5,6 +5,7 @@
 int main(){
 	int n1 =-1;
 	int n2 =-1;
+
 	scanf("%d %d",&n1,&n2);
 
 	int between = n1;
@@ -44,7 +45,7 @@ int main(){
 			}
 			between = between+1;
 		}
-	
+	printf("\n");
 	
 	
 	return 0;
