@@ -10,7 +10,7 @@ int main(){
 
 	int between = n1;
 	
-	printf("\n The Armstrong numbers are: ");
+	printf("\nThe Armstrong numbers are:");
 		while(between<=n2){
 			if (isArmstrong(between) == 1){
 				printf(" %d",between);
@@ -20,7 +20,7 @@ int main(){
 
 	between = n1;
 
-	printf("\n The Palindromes are: ");
+	printf("\nThe Palindromes are:");
 		while(between<=n2){
 			if (isPalindrome(between) == 1){
 				printf(" %d",between);
@@ -29,7 +29,7 @@ int main(){
 		}
 	
 	between = n1;
-	printf("\n The Prime numbers are: ");
+	printf("\nThe Prime numbers are:");
 		while(between<=n2){
 			if (isPrime(between) == 1){
 				printf(" %d",between);
@@ -37,7 +37,7 @@ int main(){
 			between = between+1;
 		}
 	between = n1;
-	printf("\n The Strong numbers are: ");
+	printf("\nThe Strong numbers are:");
 	
 		while(between<=n2){
 			if (isStrong(between) == 1){
@@ -45,6 +45,7 @@ int main(){
 			}
 			between = between+1;
 		}
+	printf("\n")
 	
 	
 	return 0;
