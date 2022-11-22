@@ -3,15 +3,15 @@ CC = gcc
 AR = ar
 all: loops recursives loopd recursived mains maindloop maindrec
 %.o: %.c
-	$(CC) -c $<
+	$(CC) $(CFLAGS) -fPIC -c $<
 loops: libclassloops.a
 libclassloops.a: basicClassification.o advancedClassificationLoop.o 
-	$(AR) rcu libclassloops.a basicClassification.o advancedClassificationLoop.o
-	ranlib libclassloops.a	
+	$(AR) -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
+	
 recursives: libclassrec.a
 libclassrec.a: basicClassification.o advancedClassificationRecursion.o 
-	$(AR) rc libclassrec.a basicClassification.o advancedClassificationRecursion.o
-	ranlib libclassrec.a
+	$(AR) -rcs libclassrec.a basicClassification.o advancedClassificationRecursion.o
+	
 loopd: libclassloops.so
 libclassloops.so: basicClassification.o advancedClassificationLoop.o 
 	$(CC) $(CFLAGS) -fPIC -c basicClassification.c advancedClassificationLoop.c
